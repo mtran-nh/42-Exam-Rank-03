@@ -9,18 +9,10 @@ int ft_isdigit(char c)
 
 void print_subset(int *subset, int size)
 {
-    if (0 == size)
-    {
-        printf("\n");
-        return ;
-    }
     int i = -1;
     while (++i < size)
     {
-        // if (i == size - 1)
-        //     printf("%d", subset[i]);
-        // else
-            printf("%d", subset[i]);
+        printf("%d", subset[i]);
     }
     printf("\n");
 }
