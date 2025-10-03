@@ -1,6 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "rip.h"
 
 int ft_strlen(char *str)
 {
@@ -82,7 +80,7 @@ int main(int ac, char **av)
     if (ac != 2 || av[1][0] == '\0')
         return 1;
     int i = 0;
-    while(av[i])
+    while(av[1][i])
     {
         if(!(av[1][i] == '(' || av[1][i] == ')'))
             return 1;

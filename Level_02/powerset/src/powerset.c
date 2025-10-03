@@ -1,6 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "powerset.h"
 
 int ft_isdigit(char c)
 {

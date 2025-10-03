@@ -159,17 +159,17 @@ int ft_scanf(const char *format, ...)
     return ret;
 }
 
-/* Test */
-int main(void)
-{
-    int x;
-    char str[100];
-    char c;
+// Test
+// int main(void)
+// {
+//     int x;
+//     char str[100];
+//     char c;
 
-    int converted = ft_scanf("%d %s %c", &x, str, &c);
+//     int converted = ft_scanf("%d %s %c", &x, str, &c);
 
-    printf("Converted: %d\n", converted);
-    printf("Num: %d, String: %s, Char: %c\n", x, str, c);
+//     printf("Converted: %d\n", converted);
+//     printf("Num: %d, String: %s, Char: %c\n", x, str, c);
 
-    return 0;
-}
+//     return 0;
+// }
