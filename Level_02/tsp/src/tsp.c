@@ -1,18 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <float.h>
-
-typedef struct{
-    float x;
-    float y;
-}   city;
+#include "tsp.h"
 
 float distance(city a, city b)
 {
     float dx = a.x - b.x;
     float dy = a.y - b.y;
-    return (sqrt(dx * dx + dy * dy));
+    return (sqrtf(dx * dx + dy * dy));
 }
 
 void ft_swap(int *a, int *b)
@@ -35,7 +27,7 @@ void find_shortest_path(city *cities, int *path, int n, int pos, float current_d
         return;
     }
 
-    int i = 0;
+    int i = pos;
     while (i < n)
     {
         ft_swap(&path[pos], &path[i]);
@@ -50,9 +42,9 @@ void find_shortest_path(city *cities, int *path, int n, int pos, float current_d
 
 int main(void)
 {
-    city cities[12];
+    city cities[11];
     int n = 0;
-    while (n < 11 && fscanf(stdin, "%f, %f", &cities[n].x, &cities[n].y) == 2)
+    while (n < 10 && fscanf(stdin, "%f, %f", &cities[n].x, &cities[n].y) == 2)
         n++;
     if (n < 2)
     {
@@ -60,7 +52,7 @@ int main(void)
         return 0;
     }
 
-    int path[12];
+    int path[11];
     for (int i = 0; i < n; i++)
         path[i] = i;
 
