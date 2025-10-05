@@ -11,6 +11,8 @@ void print_subset(int *subset, int size)
     while (++i < size)
     {
         printf("%d", subset[i]);
+        if (i < size - 1)
+            printf(" ");
     }
     printf("\n");
 }
@@ -56,7 +58,7 @@ int main (int ac, char **av)
     if (ac == 1 || (ac >= 2 && av[1][0] == '0' && av[1][1] == '\0'))
     {
         printf("\n");
-        return 0;
+        return 1;
     }
     if (!valid_args(ac, av))
         return (1);
@@ -82,8 +84,8 @@ int main (int ac, char **av)
     }
     int found = 0;
     backtrack(set, set_size, subset, 0, 0, 0, target, &found);
-    if (!found)
-        printf("\n");
+    // if (!found)
+    //     printf("\n");
     free(subset);
     free(set);
     return 0;
