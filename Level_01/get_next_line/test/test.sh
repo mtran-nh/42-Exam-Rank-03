@@ -18,7 +18,8 @@ echo -e "Line 1\nLine 2\nLine 3" > test1.txt
 echo -e "Single line" > test2.txt
 echo -e "Empty\n\nLines" > test3.txt
 echo -e "No newline at end" > test4.txt
-echo "" > empty.txt
+# echo "" > empty.txt
+> empty.txt
 
 # Create test program
 cat > test_main.c << 'EOF'
@@ -99,13 +100,13 @@ if ! grep -q "Total lines read: 3" output3.txt; then
 fi
 
 # # Test 4: Empty file
-# echo "Testing empty file..."
-# ./test_gnl empty.txt > output4.txt 2>/dev/null
-# if ! grep -q "Total lines read: 0" output4.txt; then
-#     echo "$(tput setaf 1)$(tput bold)FAIL: Empty file test failed$(tput sgr 0)"
-#     rm -f test*.txt empty.txt test_main.c test_gnl output*.txt
-#     exit 1
-# fi
+echo "Testing empty file..."
+./test_gnl empty.txt > output4.txt 2>/dev/null
+if ! grep -q "Total lines read: 0" output4.txt; then
+    echo "$(tput setaf 1)$(tput bold)FAIL: Empty file test failed$(tput sgr 0)"
+    rm -f test*.txt empty.txt test_main.c test_gnl output*.txt
+    exit 1
+fi
 
 # Test 5: Different buffer sizes
 echo "Testing different buffer sizes..."
