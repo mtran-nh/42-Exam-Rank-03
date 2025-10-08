@@ -63,7 +63,6 @@ int scan_int(FILE *f, va_list ap)
     while (isdigit(ch))
     {
         value = value * 10 + ch - '0';
-        count++;
         ch = fgetc(f);
         count++;
     }
