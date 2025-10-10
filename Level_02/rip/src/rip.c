@@ -44,7 +44,7 @@ void find_min_removals(char *str, int *min_remove, int index, int current_remove
         {
             char saved = str[i];
             str[i] = ' ';
-            find_min_removals(str, min_remove, index + 1, current_remove + 1);
+            find_min_removals(str, min_remove, i + 1, current_remove + 1);
             str[i] = saved;
         }
         i++;
@@ -68,7 +68,7 @@ void solution(char *str, int min_remove, int index, int current_remove)
         {
             char saved = str[i];
             str[i] = ' ';
-            solution(str, min_remove, index + 1, current_remove + 1);
+            solution(str, min_remove, i + 1, current_remove + 1);
             str[i] = saved;
         }
         i++;
